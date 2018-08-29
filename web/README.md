@@ -19,13 +19,3 @@ yarn run build
 ```
 yarn run lint
 ```
-
-### Run your unit tests
-```
-yarn run test:unit
-```
-
-### Run your end-to-end tests
-```
-yarn run test:e2e
-```
