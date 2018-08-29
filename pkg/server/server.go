@@ -20,18 +20,8 @@ func New() *Server {
 	}
 }
 
-// RegisterStaticRoute will setup the file server to serve up
-// Vue app
-func (server *Server) RegisterStaticRoute() {
-	server.
-		router.
-		PathPrefix("/").
-		Handler(http.FileServer(http.Dir("web/dist")))
-}
-
 // RegisterAPIRoutes will setup all the api routes for the front end to consume
 func (server *Server) RegisterAPIRoutes() {
-	// TODO: Build out the api layer here
 	api := server.router.PathPrefix("/api/v1").Subrouter()
 
 	api.

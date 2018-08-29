@@ -15,8 +15,8 @@ type QuoteResponse struct {
 }
 
 // GetQuote will return the relevant stock information for a given ticker
-func GetQuote(ticker string) (*QuoteResponse, error) {
-	requestURL := fmt.Sprintf("%s/stock/%s/quote", iexURI, ticker)
+func (api *API) GetQuote(ticker string) (*QuoteResponse, error) {
+	requestURL := fmt.Sprintf("%s/stock/%s/quote", api.url, ticker)
 	resp, err := http.Get(requestURL)
 	if err != nil {
 		return &QuoteResponse{}, err

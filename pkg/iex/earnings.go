@@ -23,8 +23,8 @@ type Earning struct {
 }
 
 // GetEarnings pulls data from the four most recent reported quarters
-func GetEarnings(ticker string) (*EarningsResponse, error) {
-	requestURL := fmt.Sprintf("%s/stock/%s/earnings", iexURI, ticker)
+func (api *API) GetEarnings(ticker string) (*EarningsResponse, error) {
+	requestURL := fmt.Sprintf("%s/stock/%s/earnings", api.url, ticker)
 	resp, err := http.Get(requestURL)
 	if err != nil {
 		return &EarningsResponse{}, err

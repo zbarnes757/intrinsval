@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func Test_conservativeGrahamsIntrinsicValue(t *testing.T) {
+func Test_grahamsIntrinsicValue(t *testing.T) {
 	type args struct {
 		data *Data
 	}
@@ -31,13 +31,13 @@ func Test_conservativeGrahamsIntrinsicValue(t *testing.T) {
 					},
 				},
 			},
-			want: float64(190.00),
+			want: float64(300.00),
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := conservativeGrahamsIntrinsicValue(tt.args.data); got != tt.want {
-				t.Errorf("conservativeGrahamsIntrinsicValue() = %v, want %v", got, tt.want)
+			if got := grahamsIntrinsicValue(tt.args.data); got != tt.want {
+				t.Errorf("grahamsIntrinsicValue() = %v, want %v", got, tt.want)
 			}
 		})
 	}

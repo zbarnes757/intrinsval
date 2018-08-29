@@ -5,7 +5,7 @@ import (
 )
 
 // GrahamsIntrinsicValue calculates based on Ben Graham's formula
-func grahamsIntrinsicValue(data *Data) {
+func grahamsIntrinsicValue(data *Data) float64 {
 	/*
 		V = (EPS * (PE + 2G) * RROR) / RFR
 		V is intrinsic value
@@ -22,4 +22,6 @@ func grahamsIntrinsicValue(data *Data) {
 		data.Quote.CompanyName,
 		data.Quote.Symbol,
 		val)
+
+	return val
 }
